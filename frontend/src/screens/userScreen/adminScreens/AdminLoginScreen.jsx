@@ -2,7 +2,7 @@ import AdminLogin from "../../../components/adminComponents/adminLogin"
 
 
 
-const AdminLoginScreen = () => {
+const AdminLoginScreen = () =>{
   return (
     <AdminLogin />
   )
