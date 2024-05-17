@@ -3,8 +3,11 @@ import dotenv from "dotenv";
 dotenv.config();
 import connetDB from "./config/db.js";
 import cookieParser from "cookie-parser";
-const PORT = process.env.PORT || 3001;
-import userRoutes from "./routes/userRouter.js";
+const PORT = process.env.PORT || 3000;
+
+// Routes 
+import userRouter from "./routes/userRouter.js";
+import adminRouter from "./routes/adminRouter.js";
 
 connetDB();
 
@@ -14,7 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use("/api/users", userRoutes);
+// using routes
+app.use("/api/admin",adminRouter)
+app.use("/api/users", userRouter);
 
 app.get("/", (req, res) => res.send("hai from server"));
 

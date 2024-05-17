@@ -1,12 +1,15 @@
-
+import { Container } from "react-bootstrap";
+import { Outlet } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   return (
     <div>
-      <h1>MERN UMS</h1>
+      <Container>
+        <Outlet />
+      </Container>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

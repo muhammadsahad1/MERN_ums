@@ -5,8 +5,9 @@ import User from "../model/userModel.js";
 const protect = expressAsyncHandler(async (req, res, next) => {
   let token;
 
-  token = req.cookies.jwt;
+  token = req.cookies.userJwt;
 
+  console.log('token',token)
   if (token) {
     try {
       // verifying with the userId , for checking the userId  correct or exits 

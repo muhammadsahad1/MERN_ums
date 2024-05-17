@@ -15,6 +15,14 @@ const userSchema = mongoose.Schema(
       type: String,
       require: true,
     },
+    profileImage: {
+      type: String,
+      default: "https://avatar.iran.liara.run/public/41",
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

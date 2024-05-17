@@ -4,19 +4,20 @@ import {
   registerUser,
   logoutUser,
   getUserProfile,
-  updateUserProfile,
+  updateUserProfile,  
 } from "../controllers/userController.js";
 import { protect } from "../middleware/authMiddleware.js";
+import upload from "../middleware/multer.js";
 
-const router = express.Router();
+const userRouter = express.Router();
 
 // User Route
-router.post("/", registerUser);
-router.post("/auth", authUser);
-router.post("/logout", logoutUser);
-router
+userRouter.post("/", registerUser);
+userRouter.post("/auth", authUser);
+userRouter.post("/logout", logoutUser);
+userRouter
   .route("/profile")
   .get(protect, getUserProfile)
-  .put(protect, updateUserProfile);
+  .put(protect,upload.single('image') ,updateUserProfile);
 
-export default router;
+export default userRouter;
