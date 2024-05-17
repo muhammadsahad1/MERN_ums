@@ -199,7 +199,7 @@ const AdminDashboard = () => {
                           className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
                           onClick={() => handleDeletuser(user._id)}
                         >
-                          Delete
+                        Delete
                         </button>
                       </td>
                     </tr>
